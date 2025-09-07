@@ -1453,29 +1453,20 @@ When someone clicks your protected link, they'll be asked to enter the password 
 
     # Include all other methods from previous version (shorten, qr, admin commands, etc.)
     # ... (Continue with remaining methods for brevity)
+    # आपके bot.py के end में, run method को update करें:
+async def run_async(self):
+    """Start the bot"""
+    logger.info("🚀 Starting Ultra Advanced LinkMaster Bot...")
     
-    async def run(self):
-        """Start the ultra powerful bot"""
-        logger.info("🚀 Starting Ultra Advanced LinkMaster Bot...")
-        logger.info("🛡️ 20+ bypass methods loaded")
-        logger.info("🔐 Custom password protection active")
-        logger.info("💳 Credits system enabled")
-        logger.info("🎁 Referral system active")
-        logger.info("⚡ 100x More Powerful Features Ready!")
-        
-        try:
-            self.application.run_polling(
-                allowed_updates=Update.ALL_TYPES, 
-                drop_pending_updates=True
-            )
-        except Exception as e:
-            logger.error(f"Bot startup error: {e}")
-            raise
+    try:
+        await self.application.run_polling(
+            allowed_updates=Update.ALL_TYPES, 
+            drop_pending_updates=True
+        )
+    except Exception as e:
+        logger.error(f"Bot startup error: {e}")
 
-    def run(self):
-        """Run the bot"""
-        asyncio.run(self.run())
-
-if __name__ == "__main__":
-    bot = PowerfulLinkBot()
-    bot.run()
+def run(self):
+    """Run the bot"""
+    import asyncio
+    asyncio.run(self.run_async())
