@@ -5,3 +5,5 @@ Pillow==10.2.0
 qrcode[pil]==7.4.2
 Flask==3.0.0
 gunicorn==21.2.0
+setuptools>=65.0.0
+wheel>=0.37.0
